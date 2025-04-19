@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: #0d0b1d;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            }
+
+        .spinner {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: conic-gradient(
+                #00f0ff,
+                #00ff88,
+                #aaff00,
+                #ffcc00,
+                #ff0066,
+                #aa00ff,
+                #00f0ff
+            );
+        animation: rotate 3s linear infinite;
+        position: relative;
+        box-shadow: 0 0 25px rgba(0, 255, 255, 0.2), 0 0 50px rgba(0, 255, 255, 0.1);
+        }
+
+        .spinner::before {
+            content: '';
+            position: absolute;
+            top: 8%;
+            left: 8%;
+            width: 84%;
+            height: 84%;
+            background-color: #0d0b1d;
+            border-radius: 50%;
+            z-index: 1;
+            }
+
+        @keyframes rotate {
+            0% {
+                transform: rotate(0turn);
+            }
+            100% {
+            transform: rotate(1turn);
+             }
+        }
+
+
+    </style>
+</head>
+<body>
+    
+
+</body>
+</html>
