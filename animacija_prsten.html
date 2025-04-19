@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Animacija Prstena</title>
+  <style>
+    body {
+      background-color: #050210; /* Boja pozadine */
+      height: 100vh;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .circle {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      position: relative;
+      background: linear-gradient(45deg, #fb5dad, #55fb9f, #b97aff);
+      animation: rotate 4s linear infinite;
+      filter: blur(0.5px);
+    }
+
+    .circle::before {
+      content: "";
+      position: absolute;
+      top: 8px;
+      left: 8px;
+      width: calc(100% - 16px);
+      height: calc(100% - 16px);
+      background-color: #050210;
+      border-radius: 50%;
+      z-index: 2;
+      animation: pulse 4s ease-in-out infinite;
+    }
+
+    .circle::after {
+      content: "";
+      position: absolute;
+      top: -20px;
+      left: -20px;
+      width: calc(100% + 40px);
+      height: calc(100% + 40px);
+      border-radius: 50%;
+      background: linear-gradient(45deg, #fb5dad, #55fb9f, #b97aff);
+      filter: blur(30px);
+      z-index: 0;
+      animation: glowPulse 4s ease-in-out infinite;
+    }
+
+    @keyframes rotate {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+   
+
+  </style>
+</head>
+<body>
+  <div class="circle"></div>
+</body>
+</html>
